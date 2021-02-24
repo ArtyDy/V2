@@ -4,6 +4,7 @@ import scipy.io
 from scipy.io import savemat
 import glob
 import os.path
+import numpy as np
 
 
 subs = ['sub-05DB']
@@ -33,9 +34,15 @@ for sub in subs:
             idx.append(os.path.basename(file)[-7:-4])
         
     idx =  idx[:-14]
-
+    idx=[int(x) for x in idx]
+    idx.sort()
+    for k in range(len(idx)):
+        if idx[k]<100:
+            idx[k]='%02d' % idx[k]
+        else:
+            idx[k]='%03d' % idx[k]
     ##print(sub)
-    
+
     data[sub]=dict()
     for speed in speeds:
         data[sub][speed]=dict()
@@ -85,14 +92,17 @@ for sub in subs:
 
 # %%  del
 
-del data['sub-05DB']['Normale']['Bas Haut']['71']
-del data['sub-05DB']['Rapide']['Haut Bas']['79']
-del data['sub-05DB']['Lente']['Haut Bas']['107']
+
 del data['sub-05DB']['Lente']['Haut Bas']['40']
+del data['sub-05DB']['Lente']['Haut Bas']['57']
 del data['sub-05DB']['Lente']['Haut Bas']['67']
 del data['sub-05DB']['Lente']['Haut Bas']['86']
+del data['sub-05DB']['Lente']['Haut Bas']['107']
+del data['sub-05DB']['Lente']['Bas Haut']['71']
+del data['sub-05DB']['Lente']['Bas Haut']['79']
 del data['sub-05DB']['Lente']['Bas Haut']['115']
-del data['sub-05DB']['Lente']['Bas Haut']['57']
+
+
 # %% Calcul de la vitesse verticale pour chaque frame
 
 import numpy as np
@@ -270,25 +280,25 @@ for sub in subs:
 
 #%% Excel
 
-MD['sub-05DB']['Normale']['Bas Haut']['71']='NA'
-Vmax['sub-05DB']['Normale']['Bas Haut']['71']='NA'
-SR['sub-05DB']['Normale']['Bas Haut']['71']='NA'
-amp['sub-05DB']['Normale']['Bas Haut']['71']='NA'
+# del data['sub-05DB']['Lente']['Haut Bas']['40']
+# del data['sub-05DB']['Lente']['Haut Bas']['57']
+# del data['sub-05DB']['Lente']['Haut Bas']['67']
+# del data['sub-05DB']['Lente']['Haut Bas']['86']
+# del data['sub-05DB']['Lente']['Haut Bas']['107']
+# del data['sub-05DB']['Lente']['Bas Haut']['71']
+# del data['sub-05DB']['Lente']['Bas Haut']['79']
+#del data['sub-05DB']['Lente']['Bas Haut']['115']
 
-MD['sub-05DB']['Rapide']['Haut Bas']['79']='NA'
-SR['sub-05DB']['Rapide']['Haut Bas']['79']='NA'
-Vmax['sub-05DB']['Rapide']['Haut Bas']['79']='NA'
-amp['sub-05DB']['Rapide']['Haut Bas']['79']='NA'
-
-MD['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-Vmax['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-SR['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-amp['sub-05DB']['Lente']['Haut Bas']['107']='NA'
 
 MD['sub-05DB']['Lente']['Haut Bas']['40']='NA'
-Vmax['sub-05DB']['Lente']['Haut Bas']['40']='NA'
 SR['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['40']='NA'
 amp['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+
+MD['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['57']='NA'
 
 MD['sub-05DB']['Lente']['Haut Bas']['67']='NA'
 Vmax['sub-05DB']['Lente']['Haut Bas']['67']='NA'
@@ -300,15 +310,26 @@ Vmax['sub-05DB']['Lente']['Haut Bas']['86']='NA'
 SR['sub-05DB']['Lente']['Haut Bas']['86']='NA'
 amp['sub-05DB']['Lente']['Haut Bas']['86']='NA'
 
+MD['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+
+MD['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+Vmax['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+SR['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+amp['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+
+
 MD['sub-05DB']['Lente']['Bas Haut']['115']='NA'
 Vmax['sub-05DB']['Lente']['Bas Haut']['115']='NA'
 SR['sub-05DB']['Lente']['Bas Haut']['115']='NA'
 amp['sub-05DB']['Lente']['Bas Haut']['115']='NA'
 
-MD['sub-05DB']['Lente']['Bas Haut']['57']='NA'
-Vmax['sub-05DB']['Lente']['Bas Haut']['57']='NA'
-SR['sub-05DB']['Lente']['Bas Haut']['57']='NA'
-amp['sub-05DB']['Lente']['Bas Haut']['57']='NA'
+MD['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+Vmax['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+SR['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+amp['sub-05DB']['Lente']['Bas Haut']['79']='NA'
 
 import csv
 
