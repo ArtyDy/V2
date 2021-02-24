@@ -6,15 +6,15 @@ import glob
 import os.path
 
 
-subs = ['sub-01CB', 'sub-02PC']
+subs = ['sub-05DB']
 
 speeds = ['Normale', 'Rapide', 'Lente']
 
 directions = ['Haut Bas', 'Bas Haut']
 
-directions_order = ['Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut' ]
+directions_order = ['Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut']
 
-speeds_order = ['Lente', 'Rapide', 'Normale', 'Rapide', 'Lente', 'Normale', 'Rapide', 'Lente', 'Lente', 'Rapide', 'Lente', 'Rapide', 'Rapide', 'Rapide', 'Normale', 'Normale', 'Normale', 'Lente', 'Rapide', 'Lente', 'Rapide', 'Lente', 'Normale', 'Normale', 'Normale', 'Lente', 'Normale', 'Lente', 'Lente', 'Rapide', 'Normale', 'Normale', 'Normale', 'Rapide', 'Normale', 'Normale', 'Normale', 'Rapide', 'Rapide', 'Lente', 'Normale', 'Lente', 'Rapide', 'Lente', 'Normale', 'Rapide', 'Normale', 'Lente', 'Lente', 'Rapide', 'Lente', 'Lente', 'Rapide', 'Normale', 'Rapide', 'Rapide', 'Rapide', 'Rapide', 'Lente', 'Normale', 'Lente', 'Normale', 'Rapide', 'Normale', 'Lente', 'Lente' ]
+speeds_order = ['Lente', 'Normale', 'Rapide', 'Lente', 'Normale', 'Lente', 'Normale', 'Rapide', 'Lente', 'Normale', 'Lente', 'Lente', 'Rapide', 'Normale', 'Rapide', 'Rapide', 'Normale', 'Lente', 'Rapide', 'Rapide', 'Lente', 'Rapide', 'Rapide', 'Rapide', 'Normale', 'Lente', 'Lente', 'Normale', 'Normale', 'Normale', 'Normale', 'Lente', 'Rapide', 'Normale', 'Lente', 'Normale', 'Lente', 'Lente', 'Normale', 'Lente', 'Normale', 'Normale', 'Rapide', 'Normale', 'Lente', 'Lente', 'Normale', 'Normale', 'Rapide', 'Normale', 'Lente', 'Rapide', 'Normale', 'Lente', 'Normale', 'Lente', 'Lente', 'Rapide', 'Normale', 'Normale', 'Lente', 'Rapide', 'Normale', 'Rapide', 'Lente', 'Normale', 'Lente', 'Rapide', 'Rapide', 'Rapide', 'Lente', 'Normale', 'Rapide', 'Rapide', 'Lente', 'Rapide', 'Lente', 'Lente', 'Lente', 'Rapide', 'Lente', 'Normale', 'Rapide', 'Rapide', 'Normale', 'Lente', 'Normale', 'Lente', 'Rapide', 'Lente', 'Normale', 'Normale', 'Normale', 'Normale', 'Normale', 'Rapide', 'Rapide', 'Rapide', 'Lente', 'Rapide', 'Lente', 'Normale', 'Rapide', 'Normale', 'Lente', 'Lente', 'Lente', 'Rapide', 'Rapide', 'Normale', 'Rapide', 'Rapide', 'Lente', 'Rapide', 'Lente', 'Rapide', 'Normale', 'Rapide', 'Rapide', 'Normale']
 
 data=dict()
 
@@ -22,12 +22,17 @@ data=dict()
 for sub in subs:
     
     idx = []
-    datapath = '../../Données/Pilote1/'+ sub +'/'
+    datapath = '../Données/Pilote 1 V2/'+ sub +'/'
     ##datapath = '../../Arthur/Pilote1/Données/'+ sub +'/'
     ##print(glob.glob(datapath + '*.mat'))
     for file in (glob.glob(datapath + '*.mat')):
-        idx.append(os.path.basename(file)[-6:-4])
-    idx =  idx[:-2]
+        if os.path.basename(file)[-7]=='_':
+            idx.append(os.path.basename(file)[-6:-4])
+        else:
+
+            idx.append(os.path.basename(file)[-7:-4])
+        
+    idx =  idx[:-14]
 
     ##print(sub)
     
@@ -43,43 +48,7 @@ for sub in subs:
         data[sub][k][l][m]=mat['C3D'][0][0][2][0][0][2][:, 9:12]
         
 
-#%% Rename
-import scipy.io
-import glob
-import os, os.path
 
-
-subs = ['sub-01CB', 'sub-02PC']
-
-speeds = ['Normale', 'Rapide', 'Lente']
-
-directions = ['Haut Bas', 'Bas Haut']
-
-directions_order = ['Bas Haut', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Haut Bas', 'Bas Haut', 'Haut Bas', 'Bas Haut', 'Bas Haut' ]
-
-speeds_order = ['Lente', 'Rapide', 'Normale', 'Rapide', 'Lente', 'Normale', 'Rapide', 'Lente', 'Lente', 'Rapide', 'Lente', 'Rapide', 'Rapide', 'Rapide', 'Normale', 'Normale', 'Normale', 'Lente', 'Rapide', 'Lente', 'Rapide', 'Lente', 'Normale', 'Normale', 'Normale', 'Lente', 'Normale', 'Lente', 'Lente', 'Rapide', 'Normale', 'Normale', 'Normale', 'Rapide', 'Normale', 'Normale', 'Normale', 'Rapide', 'Rapide', 'Lente', 'Normale', 'Lente', 'Rapide', 'Lente', 'Normale', 'Rapide', 'Normale', 'Lente', 'Lente', 'Rapide', 'Lente', 'Lente', 'Rapide', 'Normale', 'Rapide', 'Rapide', 'Rapide', 'Rapide', 'Lente', 'Normale', 'Lente', 'Normale', 'Rapide', 'Normale', 'Lente', 'Lente' ]
-
-data=dict()
-
-
-# for sub in subs:
-    
-#     idx = []
-#     ##datapath = '../../Données/Pilote1/'+ sub +'/'
-#     datapath = '../../Arthur/Pilote1/Données/'+ sub +'/'
-#     ##print(glob.glob(datapath + '*.mat'))
-#     for file in (glob.glob(datapath + '*.mat')):
-#         idx.append(os.path.basename(file)[-6:-4])
-#     idx =  idx[:-2]
-
-#     for file, index in zip((glob.glob(datapath + '*.mat')[:-2]), idx):
-        
-#         dest = datapath + sub + '_' + index + '.mat'
-#         os.rename(file, dest )
-#     ##print(sub)
-    
-    
-        
 
 
 # %%
@@ -88,7 +57,7 @@ import matplotlib.pyplot as plt
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 0], color ='b', label ='x')
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 1], color='r', label='y')
 
-plt.plot(data['sub-01CB']['Lente']['Haut Bas']['09'][:,2], color='g', label='z')
+plt.plot(data['sub-05DB']['Normale']['Bas Haut']['71'][:,2], color='g', label='z')
 plt.show()
 
 
@@ -114,9 +83,16 @@ for sub in subs:
                 if  sub != 'Marie' and sub != 'Fatma' and sub != 'Athina' and sub != 'Elodie' and sub != 'Kevin':
                     data[sub][speed][direction][idx]=data[sub][speed][direction][idx][0:600]
 
-# %% 
+# %%  del
 
-del data['sub-01CB']['Lente']
+del data['sub-05DB']['Normale']['Bas Haut']['71']
+del data['sub-05DB']['Rapide']['Haut Bas']['79']
+del data['sub-05DB']['Lente']['Haut Bas']['107']
+del data['sub-05DB']['Lente']['Haut Bas']['40']
+del data['sub-05DB']['Lente']['Haut Bas']['67']
+del data['sub-05DB']['Lente']['Haut Bas']['86']
+del data['sub-05DB']['Lente']['Bas Haut']['115']
+del data['sub-05DB']['Lente']['Bas Haut']['57']
 # %% Calcul de la vitesse verticale pour chaque frame
 
 import numpy as np
@@ -164,9 +140,12 @@ import matplotlib.pyplot as plt
 
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 0], color ='b', label ='x')
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 1], color='r', label='y')
-plt.plot(Vitesse['sub-02PC']['Normale']['Haut Bas']['37'], color='g', label='z')
-plt.axhline(y=Vmax['sub-02PC']['Normale']['Haut Bas']['37'])
-plt.show()
+
+for k in data['sub-05DB']['Normale']['Haut Bas'].keys():
+
+    plt.plot(Vitesse['sub-05DB']['Normale']['Haut Bas'][k], color='g', label='z')
+    plt.axhline(y=Vmax['sub-05DB']['Normale']['Haut Bas'][k])
+    plt.show()
 
 
 
@@ -230,7 +209,7 @@ for sub in data.keys():
                     s = s+1
                 MS[sub][speed][direction][idx]=t-s
                 s=0
-                #print([sub, speed, direction, idx, Vmax[sub][speed][direction][idx]])
+                print([sub, speed, direction, idx, Vmax[sub][speed][direction][idx]])
                 
                 while (Vitesse[sub][speed][direction][idx][t+s]>= MDparam* Vmax[sub][speed][direction][idx])  :
                     s = s+1
@@ -278,7 +257,7 @@ import matplotlib.pyplot as plt
 # plt.axvline(x=MS['sub-03CT']['Normale']['Bas Haut']['72'])
 # plt.axvline(x=ME['sub-03CT']['Normale']['Bas Haut']['72'])
 for sub in subs:
-    sub = 'sub-01CB'
+    sub = 'sub-05DB'
     for speed in data[sub].keys():
         for direction in directions: 
             for idx in data[sub][speed][direction].keys():
@@ -291,26 +270,67 @@ for sub in subs:
 
 #%% Excel
 
+MD['sub-05DB']['Normale']['Bas Haut']['71']='NA'
+Vmax['sub-05DB']['Normale']['Bas Haut']['71']='NA'
+SR['sub-05DB']['Normale']['Bas Haut']['71']='NA'
+amp['sub-05DB']['Normale']['Bas Haut']['71']='NA'
+
+MD['sub-05DB']['Rapide']['Haut Bas']['79']='NA'
+SR['sub-05DB']['Rapide']['Haut Bas']['79']='NA'
+Vmax['sub-05DB']['Rapide']['Haut Bas']['79']='NA'
+amp['sub-05DB']['Rapide']['Haut Bas']['79']='NA'
+
+MD['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+
+MD['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+
+MD['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+
+MD['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+
+MD['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+Vmax['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+SR['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+amp['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+
+MD['sub-05DB']['Lente']['Bas Haut']['57']='NA'
+Vmax['sub-05DB']['Lente']['Bas Haut']['57']='NA'
+SR['sub-05DB']['Lente']['Bas Haut']['57']='NA'
+amp['sub-05DB']['Lente']['Bas Haut']['57']='NA'
+
 import csv
 
-subs = [ 'sub-01CB', 'sub-02PC']
+subs = [ 'sub-05DB']
 
 speeds = [ 'Normale', 'Lente', 'Rapide']
 
 directions = ['Haut Bas', 'Bas Haut']
 
-table =np.zeros((len(data['sub-01CB']['Rapide']['Haut Bas'])+1, 25))
+table =np.zeros((len(data['sub-05DB']['Normale']['Haut Bas'])+1, 25))
 
 for sub in subs:
     
-    name = 'P1 - ' + sub  + '.csv'
+    name = 'P1V2 - ' + sub  + '.csv'
 
     with open(name, 'w', newline ='') as file2:
         writer=csv.writer(file2)
         writer.writerow(['','MDDN','MDUN','MDDS','MDUS', 'MDDF', 'MDUF', 'VMDN', 'VMUN', 'VMDS', 'VMUS', 'VMDF', 'VMUF', 'TPVDN', 'TPVUN', 'TPVDS', 'TPVUS', 'TPVDF', 'TPVUF', 'AMPDN', 'AMPUN', 'AMPDS', 'AMPUS', 'AMPDF', 'AMPUF'])
         
-        for k in range(len(data['sub-01CB']['Rapide']['Haut Bas'])):
-            writer.writerow([ '', MD[sub]['Normale']['Haut Bas'][list(data[sub]['Normale']['Haut Bas'].keys())[k]], MD[sub]['Normale']['Bas Haut'][list(data[sub]['Normale']['Bas Haut'].keys())[k]], MD[sub]['Lente']['Haut Bas'][list(data[sub]['Lente']['Haut Bas'].keys())[k]], MD[sub]['Lente']['Bas Haut'][list(data[sub]['Lente']['Bas Haut'].keys())[k]], MD[sub]['Rapide']['Haut Bas'][list(data[sub]['Rapide']['Haut Bas'].keys())[k]], MD[sub]['Rapide']['Bas Haut'][list(data[sub]['Rapide']['Bas Haut'].keys())[k]], Vmax[sub]['Normale']['Haut Bas'][list(data[sub]['Normale']['Haut Bas'].keys())[k]], Vmax[sub]['Normale']['Bas Haut'][list(data[sub]['Normale']['Bas Haut'].keys())[k]], Vmax[sub]['Lente']['Haut Bas'][list(data[sub]['Lente']['Haut Bas'].keys())[k]], Vmax[sub]['Lente']['Bas Haut'][list(data[sub]['Lente']['Bas Haut'].keys())[k]], Vmax[sub]['Rapide']['Haut Bas'][list(data[sub]['Rapide']['Haut Bas'].keys())[k]], Vmax[sub]['Rapide']['Bas Haut'][list(data[sub]['Rapide']['Bas Haut'].keys())[k]], SR[sub]['Normale']['Haut Bas'][list(data[sub]['Normale']['Haut Bas'].keys())[k]], SR[sub]['Normale']['Bas Haut'][list(data[sub]['Normale']['Bas Haut'].keys())[k]], SR[sub]['Lente']['Haut Bas'][list(data[sub]['Lente']['Haut Bas'].keys())[k]], SR[sub]['Lente']['Bas Haut'][list(data[sub]['Lente']['Bas Haut'].keys())[k]], SR[sub]['Rapide']['Haut Bas'][list(data[sub]['Rapide']['Haut Bas'].keys())[k]], SR[sub]['Rapide']['Bas Haut'][list(data[sub]['Rapide']['Bas Haut'].keys())[k]], amp[sub]['Normale']['Haut Bas'][list(data[sub]['Normale']['Haut Bas'].keys())[k]], amp[sub]['Normale']['Bas Haut'][list(data[sub]['Normale']['Bas Haut'].keys())[k]], amp[sub]['Lente']['Haut Bas'][list(data[sub]['Lente']['Haut Bas'].keys())[k]], amp[sub]['Lente']['Bas Haut'][list(data[sub]['Lente']['Bas Haut'].keys())[k]], amp[sub]['Rapide']['Haut Bas'][list(data[sub]['Rapide']['Haut Bas'].keys())[k]], amp[sub]['Rapide']['Bas Haut'][list(data[sub]['Rapide']['Bas Haut'].keys())[k]]])
+        for k in range(len(MD['sub-05DB']['Normale']['Haut Bas'])):
+                print(k)
+                writer.writerow([ '', MD[sub]['Normale']['Haut Bas'][list(MD[sub]['Normale']['Haut Bas'].keys())[k]], MD[sub]['Normale']['Bas Haut'][list(MD[sub]['Normale']['Bas Haut'].keys())[k]], MD[sub]['Lente']['Haut Bas'][list(MD[sub]['Lente']['Haut Bas'].keys())[k]], MD[sub]['Lente']['Bas Haut'][list(MD[sub]['Lente']['Bas Haut'].keys())[k]], MD[sub]['Rapide']['Haut Bas'][list(MD[sub]['Rapide']['Haut Bas'].keys())[k]], MD[sub]['Rapide']['Bas Haut'][list(MD[sub]['Rapide']['Bas Haut'].keys())[k]], Vmax[sub]['Normale']['Haut Bas'][list(MD[sub]['Normale']['Haut Bas'].keys())[k]], Vmax[sub]['Normale']['Bas Haut'][list(MD[sub]['Normale']['Bas Haut'].keys())[k]], Vmax[sub]['Lente']['Haut Bas'][list(MD[sub]['Lente']['Haut Bas'].keys())[k]], Vmax[sub]['Lente']['Bas Haut'][list(MD[sub]['Lente']['Bas Haut'].keys())[k]], Vmax[sub]['Rapide']['Haut Bas'][list(MD[sub]['Rapide']['Haut Bas'].keys())[k]], Vmax[sub]['Rapide']['Bas Haut'][list(MD[sub]['Rapide']['Bas Haut'].keys())[k]], SR[sub]['Normale']['Haut Bas'][list(MD[sub]['Normale']['Haut Bas'].keys())[k]], SR[sub]['Normale']['Bas Haut'][list(MD[sub]['Normale']['Bas Haut'].keys())[k]], SR[sub]['Lente']['Haut Bas'][list(MD[sub]['Lente']['Haut Bas'].keys())[k]], SR[sub]['Lente']['Bas Haut'][list(MD[sub]['Lente']['Bas Haut'].keys())[k]], SR[sub]['Rapide']['Haut Bas'][list(MD[sub]['Rapide']['Haut Bas'].keys())[k]], SR[sub]['Rapide']['Bas Haut'][list(MD[sub]['Rapide']['Bas Haut'].keys())[k]], amp[sub]['Normale']['Haut Bas'][list(MD[sub]['Normale']['Haut Bas'].keys())[k]], amp[sub]['Normale']['Bas Haut'][list(MD[sub]['Normale']['Bas Haut'].keys())[k]], amp[sub]['Lente']['Haut Bas'][list(MD[sub]['Lente']['Haut Bas'].keys())[k]], amp[sub]['Lente']['Bas Haut'][list(MD[sub]['Lente']['Bas Haut'].keys())[k]], amp[sub]['Rapide']['Haut Bas'][list(MD[sub]['Rapide']['Haut Bas'].keys())[k]], amp[sub]['Rapide']['Bas Haut'][list(MD[sub]['Rapide']['Bas Haut'].keys())[k]]])
 
 
 
