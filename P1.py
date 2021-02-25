@@ -7,7 +7,7 @@ import os.path
 import numpy as np
 
 
-subs = ['sub-05DB']
+subs = ['sub-07DB']
 
 speeds = ['Normale', 'Rapide', 'Lente']
 
@@ -64,7 +64,7 @@ import matplotlib.pyplot as plt
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 0], color ='b', label ='x')
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 1], color='r', label='y')
 
-plt.plot(data['sub-05DB']['Normale']['Bas Haut']['71'][:,2], color='g', label='z')
+plt.plot(data[sub]['Lente']['Haut Bas']['01'][:,2], color='g', label='z')
 plt.show()
 
 
@@ -92,17 +92,38 @@ for sub in subs:
 
 # %%  del
 
+#sub-05DB
+# del data['sub-05DB']['Lente']['Haut Bas']['40']
+# del data['sub-05DB']['Lente']['Haut Bas']['57']
+# del data['sub-05DB']['Lente']['Haut Bas']['67']
+# del data['sub-05DB']['Lente']['Haut Bas']['86']
+# del data['sub-05DB']['Lente']['Haut Bas']['107']
+# del data['sub-05DB']['Lente']['Bas Haut']['71']
+# del data['sub-05DB']['Lente']['Bas Haut']['79']
+# del data['sub-05DB']['Lente']['Bas Haut']['115']
 
-del data['sub-05DB']['Lente']['Haut Bas']['40']
-del data['sub-05DB']['Lente']['Haut Bas']['57']
-del data['sub-05DB']['Lente']['Haut Bas']['67']
-del data['sub-05DB']['Lente']['Haut Bas']['86']
-del data['sub-05DB']['Lente']['Haut Bas']['107']
-del data['sub-05DB']['Lente']['Bas Haut']['71']
-del data['sub-05DB']['Lente']['Bas Haut']['79']
-del data['sub-05DB']['Lente']['Bas Haut']['115']
-
-
+# sub-07DB
+#del data['sub-07DB']['Lente']['Haut Bas']['01']
+# del data['sub-07DB']['Lente']['Haut Bas']['09']
+# del data['sub-07DB']['Lente']['Haut Bas']['12']
+#del data['sub-07DB']['Lente']['Haut Bas']['18']
+# del data['sub-07DB']['Lente']['Haut Bas']['21']
+#del data['sub-07DB']['Lente']['Haut Bas']['32']
+# del data['sub-07DB']['Lente']['Haut Bas']['35']
+#del data['sub-07DB']['Lente']['Haut Bas']['37']
+#del data['sub-07DB']['Lente']['Haut Bas']['40']
+#del data['sub-07DB']['Lente']['Haut Bas']['45']
+#del data['sub-07DB']['Lente']['Haut Bas']['57']
+#del data['sub-07DB']['Lente']['Haut Bas']['61']
+#del data['sub-07DB']['Lente']['Haut Bas']['86']
+#del data['sub-07DB']['Lente']['Bas Haut']['27']*
+#del data['sub-07DB']['Lente']['Bas Haut']['38']
+#del data['sub-07DB']['Lente']['Bas Haut']['54']
+#del data['sub-07DB']['Lente']['Bas Haut']['65']
+#del data['sub-07DB']['Lente']['Bas Haut']['71']
+#del data['sub-07DB']['Lente']['Bas Haut']['79']
+#del data['sub-07DB']['Lente']['Bas Haut']['101']
+del data['sub-07DB']['Lente']['Bas Haut']['113']
 # %% Calcul de la vitesse verticale pour chaque frame
 
 import numpy as np
@@ -151,10 +172,10 @@ import matplotlib.pyplot as plt
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 0], color ='b', label ='x')
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 1], color='r', label='y')
 
-for k in data['sub-05DB']['Normale']['Haut Bas'].keys():
+for k in data[sub]['Normale']['Haut Bas'].keys():
 
-    plt.plot(Vitesse['sub-05DB']['Normale']['Haut Bas'][k], color='g', label='z')
-    plt.axhline(y=Vmax['sub-05DB']['Normale']['Haut Bas'][k])
+    plt.plot(Vitesse[sub]['Normale']['Haut Bas'][k], color='g', label='z')
+    plt.axhline(y=Vmax[sub]['Normale']['Haut Bas'][k])
     plt.show()
 
 
@@ -262,24 +283,26 @@ savemat('coords.mat', percept)
 
 import matplotlib.pyplot as plt
 
-# plt.plot(Vitesse['sub-03CT']['Normale']['Bas Haut']['72'], color='g', label='z')
-# plt.axhline(y=Vmax['sub-03CT']['Normale']['Bas Haut']['72'])
-# plt.axvline(x=MS['sub-03CT']['Normale']['Bas Haut']['72'])
-# plt.axvline(x=ME['sub-03CT']['Normale']['Bas Haut']['72'])
-for sub in subs:
-    sub = 'sub-05DB'
-    for speed in data[sub].keys():
-        for direction in directions: 
-            for idx in data[sub][speed][direction].keys():
-                print([sub, speed, direction, idx, Vmax[sub][speed][direction][idx]])
-                plt.plot(Vitesse[sub][speed][direction][idx], color='g', label='z')
-                plt.axhline(y=Vmax[sub][speed][direction][idx])
-                plt.axvline(x=MS[sub][speed][direction][idx])
-                plt.axvline(x=ME[sub][speed][direction][idx])
-                plt.show()
+plt.plot(Vitesse[sub]['Lente']['Haut Bas']['01'], color='g', label='z')
+plt.axhline(y=Vmax[sub]['Lente']['Haut Bas']['01'])
+# plt.axvline(x=MS[sub]['Lente']['Haut Bas']['01'])
+# plt.axvline(x=ME[sub]['Lente']['Haut Bas']['01'])
+
+# for sub in subs:
+#     sub = 'sub-05DB'
+#     for speed in data[sub].keys():
+#         for direction in directions: 
+#             for idx in data[sub][speed][direction].keys():
+#                 print([sub, speed, direction, idx, Vmax[sub][speed][direction][idx]])
+#                 plt.plot(Vitesse[sub][speed][direction][idx], color='g', label='z')
+#                 plt.axhline(y=Vmax[sub][speed][direction][idx])
+#                 plt.axvline(x=MS[sub][speed][direction][idx])
+#                 plt.axvline(x=ME[sub][speed][direction][idx])
+#                 plt.show()
 
 #%% Excel
 
+# sub-05DB
 # del data['sub-05DB']['Lente']['Haut Bas']['40']
 # del data['sub-05DB']['Lente']['Haut Bas']['57']
 # del data['sub-05DB']['Lente']['Haut Bas']['67']
@@ -290,56 +313,83 @@ for sub in subs:
 #del data['sub-05DB']['Lente']['Bas Haut']['115']
 
 
-MD['sub-05DB']['Lente']['Haut Bas']['40']='NA'
-SR['sub-05DB']['Lente']['Haut Bas']['40']='NA'
-Vmax['sub-05DB']['Lente']['Haut Bas']['40']='NA'
-amp['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+# MD['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+# SR['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+# Vmax['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+# amp['sub-05DB']['Lente']['Haut Bas']['40']='NA'
 
-MD['sub-05DB']['Lente']['Haut Bas']['57']='NA'
-SR['sub-05DB']['Lente']['Haut Bas']['57']='NA'
-Vmax['sub-05DB']['Lente']['Haut Bas']['57']='NA'
-amp['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+# MD['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+# SR['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+# Vmax['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+# amp['sub-05DB']['Lente']['Haut Bas']['57']='NA'
 
-MD['sub-05DB']['Lente']['Haut Bas']['67']='NA'
-Vmax['sub-05DB']['Lente']['Haut Bas']['67']='NA'
-SR['sub-05DB']['Lente']['Haut Bas']['67']='NA'
-amp['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+# MD['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+# Vmax['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+# SR['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+# amp['sub-05DB']['Lente']['Haut Bas']['67']='NA'
 
-MD['sub-05DB']['Lente']['Haut Bas']['86']='NA'
-Vmax['sub-05DB']['Lente']['Haut Bas']['86']='NA'
-SR['sub-05DB']['Lente']['Haut Bas']['86']='NA'
-amp['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+# MD['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+# Vmax['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+# SR['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+# amp['sub-05DB']['Lente']['Haut Bas']['86']='NA'
 
-MD['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-Vmax['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-SR['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-amp['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+# MD['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+# Vmax['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+# SR['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+# amp['sub-05DB']['Lente']['Haut Bas']['107']='NA'
 
-MD['sub-05DB']['Lente']['Bas Haut']['71']='NA'
-Vmax['sub-05DB']['Lente']['Bas Haut']['71']='NA'
-SR['sub-05DB']['Lente']['Bas Haut']['71']='NA'
-amp['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+# MD['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+# Vmax['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+# SR['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+# amp['sub-05DB']['Lente']['Bas Haut']['71']='NA'
 
 
-MD['sub-05DB']['Lente']['Bas Haut']['115']='NA'
-Vmax['sub-05DB']['Lente']['Bas Haut']['115']='NA'
-SR['sub-05DB']['Lente']['Bas Haut']['115']='NA'
-amp['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+# MD['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+# Vmax['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+# SR['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+# amp['sub-05DB']['Lente']['Bas Haut']['115']='NA'
 
-MD['sub-05DB']['Lente']['Bas Haut']['79']='NA'
-Vmax['sub-05DB']['Lente']['Bas Haut']['79']='NA'
-SR['sub-05DB']['Lente']['Bas Haut']['79']='NA'
-amp['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+# MD['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+# Vmax['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+# SR['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+# amp['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+
+#sub-07DB
+
+vars=[MD, Vmax, SR, amp]
+for k in vars:
+
+       k['sub-07DB']['Lente']['Haut Bas']['01']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['09']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['12']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['18']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['21']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['32']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['35']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['37']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['40']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['45']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['57']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['61']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['86']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['27']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['38']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['54']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['65']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['71']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['79']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['101']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['113']='NA'
 
 import csv
 
-subs = [ 'sub-05DB']
+subs = [ 'sub-07DB']
 
 speeds = [ 'Normale', 'Lente', 'Rapide']
 
 directions = ['Haut Bas', 'Bas Haut']
 
-table =np.zeros((len(data['sub-05DB']['Normale']['Haut Bas'])+1, 25))
+table =np.zeros((len(data['sub-07DB']['Normale']['Haut Bas'])+1, 25))
 
 for sub in subs:
     
@@ -349,7 +399,7 @@ for sub in subs:
         writer=csv.writer(file2)
         writer.writerow(['','MDDN','MDUN','MDDS','MDUS', 'MDDF', 'MDUF', 'VMDN', 'VMUN', 'VMDS', 'VMUS', 'VMDF', 'VMUF', 'TPVDN', 'TPVUN', 'TPVDS', 'TPVUS', 'TPVDF', 'TPVUF', 'AMPDN', 'AMPUN', 'AMPDS', 'AMPUS', 'AMPDF', 'AMPUF'])
         
-        for k in range(len(MD['sub-05DB']['Normale']['Haut Bas'])):
+        for k in range(len(MD['sub-07DB']['Normale']['Haut Bas'])):
                 print(k)
                 writer.writerow([ '', MD[sub]['Normale']['Haut Bas'][list(MD[sub]['Normale']['Haut Bas'].keys())[k]], MD[sub]['Normale']['Bas Haut'][list(MD[sub]['Normale']['Bas Haut'].keys())[k]], MD[sub]['Lente']['Haut Bas'][list(MD[sub]['Lente']['Haut Bas'].keys())[k]], MD[sub]['Lente']['Bas Haut'][list(MD[sub]['Lente']['Bas Haut'].keys())[k]], MD[sub]['Rapide']['Haut Bas'][list(MD[sub]['Rapide']['Haut Bas'].keys())[k]], MD[sub]['Rapide']['Bas Haut'][list(MD[sub]['Rapide']['Bas Haut'].keys())[k]], Vmax[sub]['Normale']['Haut Bas'][list(MD[sub]['Normale']['Haut Bas'].keys())[k]], Vmax[sub]['Normale']['Bas Haut'][list(MD[sub]['Normale']['Bas Haut'].keys())[k]], Vmax[sub]['Lente']['Haut Bas'][list(MD[sub]['Lente']['Haut Bas'].keys())[k]], Vmax[sub]['Lente']['Bas Haut'][list(MD[sub]['Lente']['Bas Haut'].keys())[k]], Vmax[sub]['Rapide']['Haut Bas'][list(MD[sub]['Rapide']['Haut Bas'].keys())[k]], Vmax[sub]['Rapide']['Bas Haut'][list(MD[sub]['Rapide']['Bas Haut'].keys())[k]], SR[sub]['Normale']['Haut Bas'][list(MD[sub]['Normale']['Haut Bas'].keys())[k]], SR[sub]['Normale']['Bas Haut'][list(MD[sub]['Normale']['Bas Haut'].keys())[k]], SR[sub]['Lente']['Haut Bas'][list(MD[sub]['Lente']['Haut Bas'].keys())[k]], SR[sub]['Lente']['Bas Haut'][list(MD[sub]['Lente']['Bas Haut'].keys())[k]], SR[sub]['Rapide']['Haut Bas'][list(MD[sub]['Rapide']['Haut Bas'].keys())[k]], SR[sub]['Rapide']['Bas Haut'][list(MD[sub]['Rapide']['Bas Haut'].keys())[k]], amp[sub]['Normale']['Haut Bas'][list(MD[sub]['Normale']['Haut Bas'].keys())[k]], amp[sub]['Normale']['Bas Haut'][list(MD[sub]['Normale']['Bas Haut'].keys())[k]], amp[sub]['Lente']['Haut Bas'][list(MD[sub]['Lente']['Haut Bas'].keys())[k]], amp[sub]['Lente']['Bas Haut'][list(MD[sub]['Lente']['Bas Haut'].keys())[k]], amp[sub]['Rapide']['Haut Bas'][list(MD[sub]['Rapide']['Haut Bas'].keys())[k]], amp[sub]['Rapide']['Bas Haut'][list(MD[sub]['Rapide']['Bas Haut'].keys())[k]]])
 
