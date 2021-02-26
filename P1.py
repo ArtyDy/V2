@@ -7,7 +7,7 @@ import os.path
 import numpy as np
 
 
-subs = ['sub-07DB']
+subs = ['sub-05DB']
 
 speeds = ['Normale', 'Rapide', 'Lente']
 
@@ -92,38 +92,38 @@ for sub in subs:
 
 # %%  del
 
-#sub-05DB
-# del data['sub-05DB']['Lente']['Haut Bas']['40']
-# del data['sub-05DB']['Lente']['Haut Bas']['57']
-# del data['sub-05DB']['Lente']['Haut Bas']['67']
-# del data['sub-05DB']['Lente']['Haut Bas']['86']
-# del data['sub-05DB']['Lente']['Haut Bas']['107']
-# del data['sub-05DB']['Lente']['Bas Haut']['71']
-# del data['sub-05DB']['Lente']['Bas Haut']['79']
-# del data['sub-05DB']['Lente']['Bas Haut']['115']
+# sub-05DB
+del data['sub-05DB']['Lente']['Haut Bas']['40']
+del data['sub-05DB']['Lente']['Haut Bas']['57']
+del data['sub-05DB']['Lente']['Haut Bas']['67']
+del data['sub-05DB']['Lente']['Haut Bas']['86']
+del data['sub-05DB']['Lente']['Haut Bas']['107']
+del data['sub-05DB']['Lente']['Bas Haut']['71']
+del data['sub-05DB']['Lente']['Bas Haut']['79']
+del data['sub-05DB']['Lente']['Bas Haut']['115']
 
-# sub-07DB
-#del data['sub-07DB']['Lente']['Haut Bas']['01']
+# # sub-07DB
+# del data['sub-07DB']['Lente']['Haut Bas']['01']
 # del data['sub-07DB']['Lente']['Haut Bas']['09']
 # del data['sub-07DB']['Lente']['Haut Bas']['12']
-#del data['sub-07DB']['Lente']['Haut Bas']['18']
+# del data['sub-07DB']['Lente']['Haut Bas']['18']
 # del data['sub-07DB']['Lente']['Haut Bas']['21']
-#del data['sub-07DB']['Lente']['Haut Bas']['32']
+# del data['sub-07DB']['Lente']['Haut Bas']['32']
 # del data['sub-07DB']['Lente']['Haut Bas']['35']
-#del data['sub-07DB']['Lente']['Haut Bas']['37']
-#del data['sub-07DB']['Lente']['Haut Bas']['40']
-#del data['sub-07DB']['Lente']['Haut Bas']['45']
-#del data['sub-07DB']['Lente']['Haut Bas']['57']
-#del data['sub-07DB']['Lente']['Haut Bas']['61']
-#del data['sub-07DB']['Lente']['Haut Bas']['86']
-#del data['sub-07DB']['Lente']['Bas Haut']['27']*
-#del data['sub-07DB']['Lente']['Bas Haut']['38']
-#del data['sub-07DB']['Lente']['Bas Haut']['54']
-#del data['sub-07DB']['Lente']['Bas Haut']['65']
-#del data['sub-07DB']['Lente']['Bas Haut']['71']
-#del data['sub-07DB']['Lente']['Bas Haut']['79']
-#del data['sub-07DB']['Lente']['Bas Haut']['101']
-del data['sub-07DB']['Lente']['Bas Haut']['113']
+# del data['sub-07DB']['Lente']['Haut Bas']['37']
+# del data['sub-07DB']['Lente']['Haut Bas']['40']
+# del data['sub-07DB']['Lente']['Haut Bas']['45']
+# del data['sub-07DB']['Lente']['Haut Bas']['57']
+# del data['sub-07DB']['Lente']['Haut Bas']['61']
+# del data['sub-07DB']['Lente']['Haut Bas']['86']
+# del data['sub-07DB']['Lente']['Bas Haut']['27']
+# del data['sub-07DB']['Lente']['Bas Haut']['38']
+# del data['sub-07DB']['Lente']['Bas Haut']['54']
+# del data['sub-07DB']['Lente']['Bas Haut']['65']
+# del data['sub-07DB']['Lente']['Bas Haut']['71']
+# del data['sub-07DB']['Lente']['Bas Haut']['79']
+# del data['sub-07DB']['Lente']['Bas Haut']['101']
+# del data['sub-07DB']['Lente']['Bas Haut']['113']
 # %% Calcul de la vitesse verticale pour chaque frame
 
 import numpy as np
@@ -169,14 +169,14 @@ for sub in data.keys():
 
 import matplotlib.pyplot as plt
 
-# plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 0], color ='b', label ='x')
-# plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 1], color='r', label='y')
+plt.plot(Vitesse['sub-07DB']['Lente']['Haut Bas']['01'])
+plt.show()
 
-for k in data[sub]['Normale']['Haut Bas'].keys():
+# for k in data[sub]['Normale']['Haut Bas'].keys():
 
-    plt.plot(Vitesse[sub]['Normale']['Haut Bas'][k], color='g', label='z')
-    plt.axhline(y=Vmax[sub]['Normale']['Haut Bas'][k])
-    plt.show()
+#     plt.plot(Vitesse[sub]['Normale']['Haut Bas'][k], color='g', label='z')
+#     plt.axhline(y=Vmax[sub]['Normale']['Haut Bas'][k])
+#     plt.show()
 
 
 
@@ -283,8 +283,15 @@ savemat('coords.mat', percept)
 
 import matplotlib.pyplot as plt
 
-plt.plot(Vitesse[sub]['Lente']['Haut Bas']['01'], color='g', label='z')
-plt.axhline(y=Vmax[sub]['Lente']['Haut Bas']['01'])
+for speed in speeds :
+    for direction in directions:
+        for idx in data[sub][speed][direction].keys():
+            print([sub, speed, direction, idx])
+            plt.plot(Vitesse[sub][speed][direction][idx], color='g', label='z')
+            plt.axhline(y=Vmax[sub][speed][direction][idx])
+            plt.axvline(x=MS[sub][speed][direction][idx])
+            plt.axvline(x=ME[sub][speed][direction][idx])
+            plt.show()
 # plt.axvline(x=MS[sub]['Lente']['Haut Bas']['01'])
 # plt.axvline(x=ME[sub]['Lente']['Haut Bas']['01'])
 
