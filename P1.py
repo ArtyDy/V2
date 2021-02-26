@@ -64,7 +64,7 @@ import matplotlib.pyplot as plt
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 0], color ='b', label ='x')
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 1], color='r', label='y')
 
-plt.plot(data[sub]['Lente']['Haut Bas']['01'][:,2], color='g', label='z')
+plt.plot(data[sub]['Lente']['Bas Haut']['27'][:500,2], color='g', label='z')
 plt.show()
 
 
@@ -101,6 +101,7 @@ del data['sub-05DB']['Lente']['Haut Bas']['107']
 del data['sub-05DB']['Lente']['Bas Haut']['71']
 del data['sub-05DB']['Lente']['Bas Haut']['79']
 del data['sub-05DB']['Lente']['Bas Haut']['115']
+data[sub]['Lente']['Bas Haut']['27']=data[sub]['Lente']['Bas Haut']['27'][:500,:]
 
 # # sub-07DB
 # del data['sub-07DB']['Lente']['Haut Bas']['01']
