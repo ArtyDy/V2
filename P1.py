@@ -7,7 +7,7 @@ import os.path
 import numpy as np
 
 
-subs = ['sub-05DB']
+subs = ['sub-07DB']
 
 speeds = ['Normale', 'Rapide', 'Lente']
 
@@ -23,7 +23,7 @@ data=dict()
 for sub in subs:
     
     idx = []
-    datapath = '../Données/Pilote 1 V2/'+ sub +'/'
+    datapath = '../Data/Données/Pilote 1 V2/'+ sub +'/'
     ##datapath = '../../Arthur/Pilote1/Données/'+ sub +'/'
     ##print(glob.glob(datapath + '*.mat'))
     for file in (glob.glob(datapath + '*.mat')):
@@ -92,39 +92,39 @@ for sub in subs:
 
 # %%  del
 
-# sub-05DB
-del data['sub-05DB']['Lente']['Haut Bas']['40']
-del data['sub-05DB']['Lente']['Haut Bas']['57']
-del data['sub-05DB']['Lente']['Haut Bas']['67']
-del data['sub-05DB']['Lente']['Haut Bas']['86']
-del data['sub-05DB']['Lente']['Haut Bas']['107']
-del data['sub-05DB']['Lente']['Bas Haut']['71']
-del data['sub-05DB']['Lente']['Bas Haut']['79']
-del data['sub-05DB']['Lente']['Bas Haut']['115']
-data[sub]['Lente']['Bas Haut']['27']=data[sub]['Lente']['Bas Haut']['27'][:500,:]
+# # sub-05DB
+# del data['sub-05DB']['Lente']['Haut Bas']['40']
+# del data['sub-05DB']['Lente']['Haut Bas']['57']
+# del data['sub-05DB']['Lente']['Haut Bas']['67']
+# del data['sub-05DB']['Lente']['Haut Bas']['86']
+# del data['sub-05DB']['Lente']['Haut Bas']['107']
+# del data['sub-05DB']['Lente']['Bas Haut']['71']
+# del data['sub-05DB']['Lente']['Bas Haut']['79']
+# del data['sub-05DB']['Lente']['Bas Haut']['115']
+# data[sub]['Lente']['Bas Haut']['27']=data[sub]['Lente']['Bas Haut']['27'][:500,:]
 
-# # sub-07DB
-# del data['sub-07DB']['Lente']['Haut Bas']['01']
-# del data['sub-07DB']['Lente']['Haut Bas']['09']
-# del data['sub-07DB']['Lente']['Haut Bas']['12']
-# del data['sub-07DB']['Lente']['Haut Bas']['18']
-# del data['sub-07DB']['Lente']['Haut Bas']['21']
-# del data['sub-07DB']['Lente']['Haut Bas']['32']
-# del data['sub-07DB']['Lente']['Haut Bas']['35']
-# del data['sub-07DB']['Lente']['Haut Bas']['37']
-# del data['sub-07DB']['Lente']['Haut Bas']['40']
-# del data['sub-07DB']['Lente']['Haut Bas']['45']
-# del data['sub-07DB']['Lente']['Haut Bas']['57']
-# del data['sub-07DB']['Lente']['Haut Bas']['61']
-# del data['sub-07DB']['Lente']['Haut Bas']['86']
-# del data['sub-07DB']['Lente']['Bas Haut']['27']
-# del data['sub-07DB']['Lente']['Bas Haut']['38']
-# del data['sub-07DB']['Lente']['Bas Haut']['54']
-# del data['sub-07DB']['Lente']['Bas Haut']['65']
-# del data['sub-07DB']['Lente']['Bas Haut']['71']
-# del data['sub-07DB']['Lente']['Bas Haut']['79']
-# del data['sub-07DB']['Lente']['Bas Haut']['101']
-# del data['sub-07DB']['Lente']['Bas Haut']['113']
+# sub-07DB
+del data['sub-07DB']['Lente']['Haut Bas']['01']
+del data['sub-07DB']['Lente']['Haut Bas']['09']
+del data['sub-07DB']['Lente']['Haut Bas']['12']
+del data['sub-07DB']['Lente']['Haut Bas']['18']
+del data['sub-07DB']['Lente']['Haut Bas']['21']
+del data['sub-07DB']['Lente']['Haut Bas']['32']
+del data['sub-07DB']['Lente']['Haut Bas']['35']
+del data['sub-07DB']['Lente']['Haut Bas']['37']
+del data['sub-07DB']['Lente']['Haut Bas']['40']
+del data['sub-07DB']['Lente']['Haut Bas']['45']
+del data['sub-07DB']['Lente']['Haut Bas']['57']
+del data['sub-07DB']['Lente']['Haut Bas']['61']
+del data['sub-07DB']['Lente']['Haut Bas']['86']
+del data['sub-07DB']['Lente']['Bas Haut']['27']
+del data['sub-07DB']['Lente']['Bas Haut']['38']
+del data['sub-07DB']['Lente']['Bas Haut']['54']
+del data['sub-07DB']['Lente']['Bas Haut']['65']
+del data['sub-07DB']['Lente']['Bas Haut']['71']
+del data['sub-07DB']['Lente']['Bas Haut']['79']
+del data['sub-07DB']['Lente']['Bas Haut']['101']
+del data['sub-07DB']['Lente']['Bas Haut']['113']
 # %% Calcul de la vitesse verticale pour chaque frame
 
 import numpy as np
