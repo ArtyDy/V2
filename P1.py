@@ -7,7 +7,7 @@ import os.path
 import numpy as np
 
 
-subs = ['sub-07DB']
+subs = ['sub-05DB', 'sub-07DB']
 
 speeds = ['Normale', 'Rapide', 'Lente']
 
@@ -64,7 +64,7 @@ import matplotlib.pyplot as plt
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 0], color ='b', label ='x')
 # plt.plot(data['Athina']['Lente']['Bas Haut']['47'][:, 1], color='r', label='y')
 
-plt.plot(data[sub]['Lente']['Bas Haut']['27'][:500,2], color='g', label='z')
+plt.plot(Vitesse['sub-07DB']['Lente']['Haut Bas']['67'], color='g', label='z')
 plt.show()
 
 
@@ -74,7 +74,7 @@ from scipy import signal
 import math
 
 order = 4
-cutoff = 9
+cutoff = 2
 
 bb, ab = signal.butter(order, (2*cutoff)/100, 'low', analog=False, output='ba')
 
@@ -93,15 +93,15 @@ for sub in subs:
 # %%  del
 
 # # sub-05DB
-# del data['sub-05DB']['Lente']['Haut Bas']['40']
-# del data['sub-05DB']['Lente']['Haut Bas']['57']
-# del data['sub-05DB']['Lente']['Haut Bas']['67']
-# del data['sub-05DB']['Lente']['Haut Bas']['86']
-# del data['sub-05DB']['Lente']['Haut Bas']['107']
-# del data['sub-05DB']['Lente']['Bas Haut']['71']
-# del data['sub-05DB']['Lente']['Bas Haut']['79']
-# del data['sub-05DB']['Lente']['Bas Haut']['115']
-# data[sub]['Lente']['Bas Haut']['27']=data[sub]['Lente']['Bas Haut']['27'][:500,:]
+del data['sub-05DB']['Lente']['Haut Bas']['40']
+del data['sub-05DB']['Lente']['Haut Bas']['57']
+del data['sub-05DB']['Lente']['Haut Bas']['67']
+del data['sub-05DB']['Lente']['Haut Bas']['86']
+del data['sub-05DB']['Lente']['Haut Bas']['107']
+del data['sub-05DB']['Lente']['Bas Haut']['71']
+del data['sub-05DB']['Lente']['Bas Haut']['79']
+del data['sub-05DB']['Lente']['Bas Haut']['115']
+data['sub-05DB']['Lente']['Bas Haut']['27']=data['sub-05DB']['Lente']['Bas Haut']['27'][:500,:]
 
 # sub-07DB
 del data['sub-07DB']['Lente']['Haut Bas']['01']
@@ -114,11 +114,14 @@ del data['sub-07DB']['Lente']['Haut Bas']['35']
 del data['sub-07DB']['Lente']['Haut Bas']['37']
 del data['sub-07DB']['Lente']['Haut Bas']['40']
 del data['sub-07DB']['Lente']['Haut Bas']['45']
+
 del data['sub-07DB']['Lente']['Haut Bas']['57']
 del data['sub-07DB']['Lente']['Haut Bas']['61']
+del data['sub-07DB']['Lente']['Haut Bas']['67']
 del data['sub-07DB']['Lente']['Haut Bas']['86']
 del data['sub-07DB']['Lente']['Bas Haut']['27']
 del data['sub-07DB']['Lente']['Bas Haut']['38']
+del data['sub-07DB']['Lente']['Bas Haut']['51']
 del data['sub-07DB']['Lente']['Bas Haut']['54']
 del data['sub-07DB']['Lente']['Bas Haut']['65']
 del data['sub-07DB']['Lente']['Bas Haut']['71']
@@ -321,46 +324,46 @@ for speed in speeds :
 #del data['sub-05DB']['Lente']['Bas Haut']['115']
 
 
-# MD['sub-05DB']['Lente']['Haut Bas']['40']='NA'
-# SR['sub-05DB']['Lente']['Haut Bas']['40']='NA'
-# Vmax['sub-05DB']['Lente']['Haut Bas']['40']='NA'
-# amp['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+MD['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['40']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['40']='NA'
 
-# MD['sub-05DB']['Lente']['Haut Bas']['57']='NA'
-# SR['sub-05DB']['Lente']['Haut Bas']['57']='NA'
-# Vmax['sub-05DB']['Lente']['Haut Bas']['57']='NA'
-# amp['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+MD['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['57']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['57']='NA'
 
-# MD['sub-05DB']['Lente']['Haut Bas']['67']='NA'
-# Vmax['sub-05DB']['Lente']['Haut Bas']['67']='NA'
-# SR['sub-05DB']['Lente']['Haut Bas']['67']='NA'
-# amp['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+MD['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['67']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['67']='NA'
 
-# MD['sub-05DB']['Lente']['Haut Bas']['86']='NA'
-# Vmax['sub-05DB']['Lente']['Haut Bas']['86']='NA'
-# SR['sub-05DB']['Lente']['Haut Bas']['86']='NA'
-# amp['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+MD['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['86']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['86']='NA'
 
-# MD['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-# Vmax['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-# SR['sub-05DB']['Lente']['Haut Bas']['107']='NA'
-# amp['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+MD['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+Vmax['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+SR['sub-05DB']['Lente']['Haut Bas']['107']='NA'
+amp['sub-05DB']['Lente']['Haut Bas']['107']='NA'
 
-# MD['sub-05DB']['Lente']['Bas Haut']['71']='NA'
-# Vmax['sub-05DB']['Lente']['Bas Haut']['71']='NA'
-# SR['sub-05DB']['Lente']['Bas Haut']['71']='NA'
-# amp['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+MD['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+Vmax['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+SR['sub-05DB']['Lente']['Bas Haut']['71']='NA'
+amp['sub-05DB']['Lente']['Bas Haut']['71']='NA'
 
 
-# MD['sub-05DB']['Lente']['Bas Haut']['115']='NA'
-# Vmax['sub-05DB']['Lente']['Bas Haut']['115']='NA'
-# SR['sub-05DB']['Lente']['Bas Haut']['115']='NA'
-# amp['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+MD['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+Vmax['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+SR['sub-05DB']['Lente']['Bas Haut']['115']='NA'
+amp['sub-05DB']['Lente']['Bas Haut']['115']='NA'
 
-# MD['sub-05DB']['Lente']['Bas Haut']['79']='NA'
-# Vmax['sub-05DB']['Lente']['Bas Haut']['79']='NA'
-# SR['sub-05DB']['Lente']['Bas Haut']['79']='NA'
-# amp['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+MD['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+Vmax['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+SR['sub-05DB']['Lente']['Bas Haut']['79']='NA'
+amp['sub-05DB']['Lente']['Bas Haut']['79']='NA'
 
 #sub-07DB
 
@@ -379,9 +382,11 @@ for k in vars:
        k['sub-07DB']['Lente']['Haut Bas']['45']='NA'
        k['sub-07DB']['Lente']['Haut Bas']['57']='NA'
        k['sub-07DB']['Lente']['Haut Bas']['61']='NA'
+       k['sub-07DB']['Lente']['Haut Bas']['67']='NA'
        k['sub-07DB']['Lente']['Haut Bas']['86']='NA'
        k['sub-07DB']['Lente']['Bas Haut']['27']='NA'
        k['sub-07DB']['Lente']['Bas Haut']['38']='NA'
+       k['sub-07DB']['Lente']['Bas Haut']['51']='NA'
        k['sub-07DB']['Lente']['Bas Haut']['54']='NA'
        k['sub-07DB']['Lente']['Bas Haut']['65']='NA'
        k['sub-07DB']['Lente']['Bas Haut']['71']='NA'
@@ -391,7 +396,7 @@ for k in vars:
 
 import csv
 
-subs = [ 'sub-07DB']
+subs = [ 'sub-05DB', 'sub-07DB']
 
 speeds = [ 'Normale', 'Lente', 'Rapide']
 
